@@ -109,6 +109,8 @@ body{
     font-size: 1.6rm;
     line-height: 1.5; 
     height: 300vh;
+
+    background-color: var(--eerie-black);
 }
 
 :focus-visible{
@@ -126,4 +128,88 @@ body{
 }
 ::-webkit-scrollbar-thumb:hover{
     background-color: hsl(0, 0%, 70%);
+}
+
+/* ------------------- *\
+      Reused Style
+\* ___________________ */
+
+
+.contaier{
+    padding-inline: 16px;
+}
+
+.-material-symbols-rounded{
+     --fs: 1em
+     font-variation-sattings: 'FILL' 0, 'wght' 600, 'GRAD' 0, 'opsz' 40;
+     font-size: var(--fs);
+     width: 1em;
+     overflow: hidden;
+}
+
+/* ------------------- *\
+         Header
+\* ___________________ */
+
+
+.header .btn {
+     display: none;
+}
+
+.header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 15px;
+    padding-inline-start: 40px;
+    z-index: 4;
+}
+
+.header .contaier {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img{
+    width: 100px;
+}
+
+.nav-toggle-icon{
+    width: 30px;
+    height: 2px;
+    background-color:chartreuse;
+    transition: var(--transition);
+}
+
+.nav-toggle-icon:not(:last-child){
+    margin-block-end: 7px;
+}
+
+.nav-toggle-btn.active .icon2{
+    opacity: 0;
+    transform: translateX(-10px);
+}
+
+.nav-toggle-btn.active .icon1{
+    transform: rotate(45deg) translate(8px 8px);
+}
+
+.nav-toggle-btn.active .icon3{
+    transform: rotate(-45deg) translate(4px -4px);
+}
+
+.navbar{
+    position: absolute;
+    top: 100;
+    right: 30;
+    background-color: var(--international-orange-engineering);
+    min-width:max-content;
+    width: 30%;
+    transform: translateY(20px);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.25s var(--cubic-out);
+    z-index: 2;
 }
